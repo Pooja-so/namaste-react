@@ -1,0 +1,60 @@
+<!-- Using Emmet html:5--It creates basic html skeleton for you -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <!-- 1. Writing Hello world using HTML only -->
+    <!-- <div id="root1">
+        Hello World
+    </div>  -->
+
+    <!-- 2.Writing Hello world using javascript -->
+    <!-- <div id="root2"></div> -->
+    <!-- <script>
+      // creating an h1 tag
+      const heading = document.createElement("h1");
+      // Putting hello world inside heading
+      heading.innerHTML = "Hello world from javascript";
+
+      // Inorder to insert heading inside div tag first of all, we need to find div tag
+      const root = document.getElementById("root2");
+      // Every node in html has function called appendChild which can be used to append elements inside other elements using javascript
+      root.appendChild(heading);
+    </script> -->
+
+    <!-- Injecting react.js into our project -->
+
+    <!-- Step:1 Loading React into our project from another server or domain -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <!-- Step:2  Loading ReactDOM into our project from another server or domain -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <i> Hell or heaven </i>
+    <!-- 3. Writing Hello world using react.js -->
+    <div id="root">
+      <h1>Hacker</h1>
+      <h1>Hacker</h1>
+      <h1>Hacker</h1>
+      <h1>Hacker</h1>
+      <h1>Hacker</h1>
+      <h1>Hacker</h1>
+      <h1>Hacker</h1>
+      <h1>Hacker</h1>
+    </div>
+    <b>Sab moh maya hai</b>
+
+    <!-- Step:3 Loading App.js into our project  -->
+    <script src="./App.js"></script>
+  </body>
+</html>
