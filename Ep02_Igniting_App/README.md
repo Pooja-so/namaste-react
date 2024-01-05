@@ -28,7 +28,7 @@
 
 ## References
 
-• NPM official documentation - https://npmjs.com
-• Parcel Documentation - https://parcel.com
-• Parcel on Production
-• BrowsersList: https://browserslist.dev/
+- NPM official documentation - https://npmjs.com
+- Parcel Documentation - https://parcel.com
+- Parcel on Production
+- BrowsersList: https://browserslist.dev/
