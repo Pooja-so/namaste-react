@@ -3,7 +3,7 @@
 - What is JSX?
 - Superpowers of JSX
 - Role of type attribute in script tag? What options can I use there?
-- {TitleComponent} vs \`{<TitleComponent/>}\` vs \`{<TitleComponent></TitleComponent>}\` in JSX
+- {TitleComponent} vs {`<`TitleComponent/> } vs {`<`TitleComponent>`<`/TitleComponent>} in JSX
 
 # Coding Assignment:
 
@@ -14,7 +14,7 @@
 - Create a functional component of the same with JSX
 - Pass attributes into the tag in JSX
 - Composition of Component(Add a component inside another)
-- {TitleComponent} vs \`{<TitleComponent/>}\` vs \`{<TitleComponent></TitleComponent>}\` in JSX
+- {TitleComponent} vs {`<`TitleComponent/>} vs {`<`TitleComponent>`<`/TitleComponent>} in JSX
 
 ### Question 2
 
