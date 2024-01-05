@@ -1,0 +1,13 @@
+#heading {
+    color: blueviolet;
+}
+
+.head{
+    color: rgb(228, 34, 99);
+}
+
+body {
+    background-image: url("./img/wallpaper.jpg");
+    background-size: cover;
+
+}
