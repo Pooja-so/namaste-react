@@ -8,6 +8,7 @@ import Body from "./components/Body";
 import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/ContactUs";
 import Error from "./components/Error";
+import RestaurantMenu from "./components/RestaurantMenu";
 
 /* import Header from "./components/Header" is same as import Header from "./components/Header.js". So don't write .js extension and try to keep it as simple as possible. */
 
@@ -38,6 +39,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <ContactUs />,
+      },
+      {
+        path: "/restaurants/:resId",
+        element: <RestaurantMenu />,
       },
     ],
     errorElement: <Error />,
