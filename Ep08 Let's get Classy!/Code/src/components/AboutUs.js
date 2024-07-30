@@ -1,7 +1,11 @@
 import React from "react";
 // import User from "./User";
 // import CountClass from "./CountClass";
-import UserClass from "./UserClass";
+// import UserClass from "./UserClass";
+
+import ComponentDidMountClass from "./DifferenceBetween/ComponentDidMountClass";
+
+import UseEffectFunction from "./DifferenceBetween/UseEffectFunction";
 
 class AboutUs extends React.Component {
   constructor(props) {
@@ -17,8 +21,10 @@ class AboutUs extends React.Component {
         {/* <User name={"Pooja (Function)"} location={"Bhavnagar"} /> */}
         {/* <CountClass name={"Child 2"} location={"Bhavnagar"} />
         <CountClass name={"Child 3"} location={"Bhavnagar"} /> */}
+        {/* <UserClass /> */}
 
-        <UserClass />
+        {/* <ComponentDidMountClass /> */}
+        <UseEffectFunction/>
       </div>
     );
   }
