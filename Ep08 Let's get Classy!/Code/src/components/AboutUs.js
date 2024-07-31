@@ -3,9 +3,11 @@ import React from "react";
 // import CountClass from "./CountClass";
 // import UserClass from "./UserClass";
 
-import ComponentDidMountClass from "./DifferenceBetween/ComponentDidMountClass";
+// import ComponentDidMountClass from "./DifferenceBetween/ComponentDidMountClass";
+// import UseEffectFunction from "./DifferenceBetween/UseEffectFunction";
 
-import UseEffectFunction from "./DifferenceBetween/UseEffectFunction";
+import TimerFunction from "./DifferenceBetween/TimerFunction";
+import TimerClass from "./DifferenceBetween/TimerClass";
 
 class AboutUs extends React.Component {
   constructor(props) {
@@ -24,7 +26,10 @@ class AboutUs extends React.Component {
         {/* <UserClass /> */}
 
         {/* <ComponentDidMountClass /> */}
-        <UseEffectFunction/>
+        {/* <UseEffectFunction/> */}
+
+        <TimerFunction />
+        {/* <TimerClass /> */}
       </div>
     );
   }
