@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import useRestaurantList from "../utlis/useRestaurantList";
+import useOnlineStatus from "../utlis/useOnlineStatus";
 import { Link } from "react-router-dom";
 
 import RestaurantCard from "./RestaurantCard";
@@ -10,8 +11,12 @@ const Body = () => {
 
   const restaurantList = useRestaurantList();
   console.log(" RestaurantList: ", restaurantList);
+
   const [filteredRestaurant, setFilteredRestaurant] = useState([]); // Do modification in the filteredRestaurant state variable
+
   const [searchText, setSearchText] = useState("");
+  const onlineStatus = useOnlineStatus();
+  console.log("Online Status: ", onlineStatus);
 
   useEffect(() => {
     console.log(" In Filtered useEffect..: ");
@@ -36,6 +41,10 @@ const Body = () => {
     console.log("Searched Restaurant Result: ", searchResult);
 
     setFilteredRestaurant(searchResult);
+  }
+
+  if (!onlineStatus) {
+    return <h1>Oops!! No internet connection.....</h1>;
   }
 
   console.log("Body component is rendered");

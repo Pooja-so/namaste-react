@@ -1,11 +1,13 @@
 import { useState } from "react";
-import logo from "../../img/food.png";
+import useOnlineStatus from "../utlis/useOnlineStatus";
 import { Link } from "react-router-dom";
+import logo from "../../img/food.png";
 
 const Header = () => {
   let btnName = "Login"; //Normal JS variable
 
   const [loginBtn, setLoginBtn] = useState("Login");
+  const onlineStatus = useOnlineStatus();
 
   console.log(" Header Component rendered..");
   return (
@@ -15,6 +17,7 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
+          <li>{onlineStatus ? "✅" : "🔴"}Online Status</li>
           <li>
             {/* Using anchor tag Refreshes the whole page */}
             <a href="/"> Home </a>
