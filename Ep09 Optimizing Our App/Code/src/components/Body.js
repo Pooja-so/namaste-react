@@ -1,50 +1,36 @@
 import { useEffect, useState } from "react";
-import { Link} from "react-router-dom";
+import useRestaurantList from "../utlis/useRestaurantList";
+import { Link } from "react-router-dom";
 
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-import { FOOD_APP_API } from "../utlis/constants";
 
 const Body = () => {
   // Local State variable - super powerful variable
 
-  const [lisOfRestaurant, setListOfRestaurant] = useState([]); // Do not modify the listOfRestaurant state variable as you will lose the original data fetched from the API
+  const restaurantList = useRestaurantList();
+  console.log(" RestaurantList: ", restaurantList);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]); // Do modification in the filteredRestaurant state variable
   const [searchText, setSearchText] = useState("");
 
-  /* useEffect(callback function, dependency array)
-  - callback function is called after the body component is rendered
-  */
   useEffect(() => {
-    fetchData();
-  }, []);
-
-  // Function to fetch the data
-  const fetchData = async () => {
-    const data = await fetch(FOOD_APP_API);
-    const jsonData = await data.json();
-
-    const restaurants =
-      jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants;
-
-    console.log(restaurants);
-
-    setListOfRestaurant(restaurants);
-    setFilteredRestaurant(restaurants);
-  };
+    console.log(" In Filtered useEffect..: ");
+    console.log("Before Filtered State: ", filteredRestaurant);
+    setFilteredRestaurant(restaurantList); // As the state vraiable is updated body component is re-rendered
+    console.log("After Filtered State: ", filteredRestaurant);
+  }, [restaurantList]);
 
   // Function to filter the top rated restaurant
   function filterRestaurant() {
-    const filteredData = lisOfRestaurant.filter(
-      (restaurant) => restaurant.info.avgRating > 3.9
+    const filteredData = restaurantList.filter(
+      (restaurant) => restaurant.info.avgRating > 4.5
     );
     setFilteredRestaurant(filteredData);
   }
 
   // Function to search the restaurant
   function searchRestaurant() {
-    const searchResult = lisOfRestaurant.filter((restaurant) =>
+    const searchResult = restaurantList.filter((restaurant) =>
       restaurant.info.name.toLowerCase().includes(searchText.toLowerCase())
     );
     console.log("Searched Restaurant Result: ", searchResult);
@@ -55,7 +41,7 @@ const Body = () => {
   console.log("Body component is rendered");
 
   // conditional rendering
-  return lisOfRestaurant.length === 0 ? (
+  return restaurantList.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
