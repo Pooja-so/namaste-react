@@ -19,8 +19,9 @@ const Header = () => {
         <ul>
           <li>{onlineStatus ? "✅" : "🔴"}Online Status</li>
           <li>
-            {/* Using anchor tag Refreshes the whole page */}
-            <a href="/"> Home </a>
+            {/* Using anchor tag Refreshes the whole page. So it's not a good way */}
+            {/* <a href="/">Home</a> */}
+            <Link to="/"> Home </Link>
           </li>
           <li>
             {/* Link component the whole pag si not refreshed. Only the required component is loaded */}
@@ -28,6 +29,9 @@ const Header = () => {
           </li>
           <li>
             <Link to="/contact">Contact Us</Link>
+          </li>
+          <li>
+            <Link to="/grocery">Grocery</Link>
           </li>
           <li>Cart</li>
         </ul>
