@@ -11,34 +11,34 @@ const Header = () => {
 
   console.log(" Header Component rendered..");
   return (
-    <div className="w-10">
-      <div className="logo">
-        <img src={logo} />
+    <div className="flex justify-between bg-yellow-200 shadow-md">
+      <div className="w-20 ">
+        <img src={logo} className="w-15" />
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>{onlineStatus ? "✅" : "🔴"}Online Status</li>
-          <li>
+      <div className="flex">
+        <ul className="flex gap-6 items-center">
+          <li className="text-xl">{onlineStatus ? "✅" : "🔴"}Online Status</li>
+          <li className="text-xl">
             {/* Using anchor tag Refreshes the whole page. So it's not a good way */}
             {/* <a href="/">Home</a> */}
             <Link to="/"> Home </Link>
           </li>
-          <li>
+          <li className="text-xl">
             {/* Link component the whole pag si not refreshed. Only the required component is loaded */}
             <Link to="/about">About US</Link>
           </li>
-          <li>
+          <li className="text-xl">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li>
+          <li className="text-xl">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li>Cart</li>
+          <li className="text-xl">Cart</li>
         </ul>
       </div>
-      <div>
+      <div className="flex items-center mx-5">
         <button
-          className="login-btn"
+          className="p-3 text-pretty bg-green-400 rounded-lg"
           onClick={() => {
             // btnName = "Log Out";
             // console.log("Button Name: ", btnName);

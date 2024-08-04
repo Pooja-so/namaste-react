@@ -54,28 +54,28 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="btn-container">
+      <div className="flex gap-40 m-8">
         <div className="filter">
-          <button className="filter-btn" onClick={filterRestaurant}>
+          <button className="bg-green-500 p-3 rounded-lg  border-gray-400 border-2 shadow-lg " onClick={filterRestaurant}>
             Top Rated Restaurant
           </button>
         </div>
 
-        <div className="search">
+        <div className="flex justify-between items-center">
           <input
-            className="search-input"
+            className=" p-2 px-10  border-2 border-slate-400 border-r-0  rounded-l-lg shadow-lg"
             type="text"
             value={searchText}
             placeholder="search by restaurant name"
             onChange={(event) => setSearchText(event.target.value)}
           ></input>
-          <button className="search-btn" onClick={searchRestaurant}>
+          <button className="bg-green-500 p-2 rounded-r-lg border-gray-400 border-2 shadow-lg  " onClick={searchRestaurant}>
             search
           </button>
         </div>
       </div>
 
-      <div className="card-container">
+      <div className="grid grid-cols-4 gap-5 place-content-center w-[100%]">
         {/* Passing props to component */}
         {/*Returning a restaurant card for each restaurant in list*/}
         {/* Warning: Each child in a list should have a unique "key" prop. */}
