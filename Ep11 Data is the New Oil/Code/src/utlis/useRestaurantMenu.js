@@ -16,10 +16,10 @@ const useRestaurantMenu = (resId) => {
   const fetchMenuAPI = async () => {
     const data = await fetch(RESTAURANT_MENU_API + resId);
     const json = await data.json();
-    console.log("Json: ", json);
+    // console.log("Json: ", json);
     setResMenu(json);
   };
-  //   Step 2: Recognize the output
+  //*   Step 2: Recognize the output
   return resMenu;
 };
 

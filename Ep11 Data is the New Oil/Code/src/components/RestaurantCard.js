@@ -13,11 +13,13 @@ const RestaurantCard = (props) => {
   } = resData?.info;
   return (
     <div className="flex flex-col justify-center items-center w-80  p-5 bg-slate-200 h-auto rounded-lg hover:bg-slate-300">
-      <img
-        className="w-30 rounded-lg"
-        src={IMG_CDN_URL + cloudinaryImageId}
-      ></img>
-      <div className="flex flex-col gap-1 p-3">
+      <div className="h-3/6">
+        <img
+          className="w-30 rounded-lg"
+          src={IMG_CDN_URL + cloudinaryImageId}
+        ></img>
+      </div>
+      <div className="flex flex-col gap-1 p-3 h-3/6">
         <h3 className="font-bold text-xl justify-self-center">{name}</h3>
         <h4 className="text-lg">{cuisines.join(", ")}</h4>
         <h4 className="text-lg">{avgRating} Star rating</h4>
@@ -51,7 +53,9 @@ export const isOpened = (RestaurantCard) => {
   return (props) => {
     return (
       <>
-        <label className=" absolute bg-green-700 text-white p-1 rounded-lg">Open</label>
+        <label className=" absolute bg-green-700 text-white p-1 rounded-lg text-lg">
+          Open
+        </label>
         <RestaurantCard {...props} />
       </>
     );

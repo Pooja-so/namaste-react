@@ -16,7 +16,7 @@ const Header = () => {
         <img src={logo} className="w-15" />
       </div>
       <div className="flex">
-        <ul className="flex gap-6 items-center">
+        <ul className="flex gap-6 items-center font-semibold">
           <li className="text-xl">{onlineStatus ? "✅" : "🔴"}Online Status</li>
           <li className="text-xl">
             {/* Using anchor tag Refreshes the whole page. So it's not a good way */}
@@ -38,7 +38,7 @@ const Header = () => {
       </div>
       <div className="flex items-center mx-5">
         <button
-          className="p-3 text-pretty bg-green-400 rounded-lg"
+          className="p-3 text-pretty bg-green-400 rounded-lg font-medium"
           onClick={() => {
             // btnName = "Log Out";
             // console.log("Button Name: ", btnName);
