@@ -2,18 +2,20 @@ import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utlis/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
 import Shimmer from "./Shimmer";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
   // We need to again fetch the API in case the restaurant ID changes. so we will keep the restaurant inforamtion in state variable.
   //* As the component is re-rendered whenever the state variable changes
   const { resId } = useParams();
   const resMenu = useRestaurantMenu(resId);
-  //   const params = useParams();
-  // console.log("Paramater", params);
+
+  //* Accordian controlling
+  const [showIndex, setShowIndex] = useState(null);
 
   if (resMenu === null) return <Shimmer />;
 
-  const { id, name, cuisines, costForTwoMessage } =
+  const { name, cuisines, costForTwoMessage } =
     resMenu?.data?.cards[2]?.card?.card?.info;
 
   const cardGroup =
@@ -33,10 +35,15 @@ const RestaurantMenu = () => {
       <h3 className="italic text-lg">
         {cuisines.join(", ")} - {costForTwoMessage}{" "}
       </h3>
-      {categories.map((category) => (
+      {categories.map((category, index) => (
         <RestaurantCategory
           key={category?.card?.card?.title}
           categoryData={category?.card?.card}
+          showItems={index === showIndex ? true : false}
+          setShowIndex={() =>
+            setShowIndex((prevIndex) => (index === prevIndex ? null : index))
+          }
+          // setShowIndex={() => setShowIndex(index)}
         />
       ))}
     </div>

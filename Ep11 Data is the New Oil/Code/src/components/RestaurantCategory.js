@@ -1,16 +1,19 @@
 import { useState } from "react";
 import ItemCards from "./ItemCards";
 
-const RestaurantCategory = ({ categoryData }) => {
-  const [expandCategory, setExpandCategory] = useState(false);
-  const [arrow, setArrow] = useState("down");
+const RestaurantCategory = ({ categoryData, showItems, setShowIndex }) => {
+  // const [expandCategory, setExpandCategory] = useState(false);
+  // const [arrow, setArrow] = useState("down");
+
+  // function handleClick() {
+  //   setExpandCategory(!expandCategory);
+  //   setArrow(arrow === "down" ? "up" : "down");
+  // }
 
   function handleClick() {
-    setExpandCategory(!expandCategory);
-    setArrow(arrow === "down" ? "up" : "down");
+    setShowIndex();
   }
 
-  // console.log("Category Data: ", categoryData);
   return (
     //w-6/12: width:50%
     <div>
@@ -23,10 +26,11 @@ const RestaurantCategory = ({ categoryData }) => {
           <h1>
             {categoryData?.title} ({categoryData?.itemCards?.length})
           </h1>
-          <span>{arrow === "down" ? "⬇️" : "⬆️"}</span>
+          {/* <span>{arrow === "down" ? "⬇️" : "⬆️"}</span> */}
+          <span>{"⬇️"}</span>
         </div>
         {/* ItemCards */}
-        {expandCategory && <ItemCards items={categoryData?.itemCards} />}
+        {showItems && <ItemCards items={categoryData?.itemCards} />}
       </div>
     </div>
   );
