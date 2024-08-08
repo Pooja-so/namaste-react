@@ -2,12 +2,15 @@ import { useEffect, useState } from "react";
 import useRestaurantList from "../utlis/useRestaurantList";
 import useOnlineStatus from "../utlis/useOnlineStatus";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import UserContext from "../utlis/UserContext";
 
 import RestaurantCard, { isOpened } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 
 const Body = () => {
   // Local State variable - super powerful variable
+  const { loggedInUser, setUsername } = useContext(UserContext);
 
   const restaurantList = useRestaurantList();
   console.log(" RestaurantList: ", restaurantList);
@@ -73,6 +76,19 @@ const Body = () => {
           >
             search
           </button>
+        </div>
+
+        <div>
+          <label className="font-bold p-1">Username</label>
+          <input
+            className=" p-2 px-10  border-2 border-slate-400 shadow-lg"
+            type="text"
+            placeholder="username"
+            value={loggedInUser}
+            onChange={(event) => {
+              setUsername(event.target.value);
+            }}
+          ></input>
         </div>
       </div>
 

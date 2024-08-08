@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import useOnlineStatus from "../utlis/useOnlineStatus";
 import { Link } from "react-router-dom";
+import UserContext from "../utlis/UserContext";
 import logo from "../../img/food.png";
 
 const Header = () => {
@@ -8,6 +9,7 @@ const Header = () => {
 
   const [loginBtn, setLoginBtn] = useState("Login");
   const onlineStatus = useOnlineStatus();
+  const { loggedInUser } = useContext(UserContext);
 
   console.log(" Header Component rendered..");
   return (
@@ -24,7 +26,7 @@ const Header = () => {
             <Link to="/"> Home </Link>
           </li>
           <li className="text-xl">
-            {/* Link component the whole pag si not refreshed. Only the required component is loaded */}
+            {/* Link component the whole page is not refreshed. Only the required component is loaded */}
             <Link to="/about">About US</Link>
           </li>
           <li className="text-xl">
@@ -34,14 +36,13 @@ const Header = () => {
             <Link to="/grocery">Grocery</Link>
           </li>
           <li className="text-xl">Cart</li>
+          <li className="text-xl italic"> {loggedInUser} </li>
         </ul>
       </div>
       <div className="flex items-center mx-5">
         <button
           className="p-3 text-pretty bg-green-400 rounded-lg font-medium"
           onClick={() => {
-            // btnName = "Log Out";
-            // console.log("Button Name: ", btnName);
             loginBtn === "Login" ? setLoginBtn("Logout") : setLoginBtn("Login");
             console.log("Button clicked: " + loginBtn);
           }}

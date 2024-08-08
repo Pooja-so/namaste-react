@@ -1,4 +1,5 @@
 import React from "react";
+import UserContext from "../utlis/UserContext";
 // import User from "./User";
 // import CountClass from "./CountClass";
 // import UserClass from "./UserClass";
@@ -14,11 +15,9 @@ class AboutUs extends React.Component {
     return (
       <div className="about">
         <h1>About Us</h1>
-        {/* <User name={"Pooja (Function)"} location={"Bhavnagar"} /> */}
-        {/* <CountClass name={"Child 2"} location={"Bhavnagar"} />
-        <CountClass name={"Child 3"} location={"Bhavnagar"} /> */}
-        {/* <UserClass /> */}
-
+        <UserContext.Consumer>
+          {({ loggedInUser }) => <h1>{loggedInUser}</h1>}
+        </UserContext.Consumer>
       </div>
     );
   }
