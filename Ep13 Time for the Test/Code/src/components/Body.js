@@ -96,10 +96,10 @@ const Body = () => {
         {/* Passing props to component */}
         {/*Returning a restaurant card for each restaurant in list*/}
         {/* Warning: Each child in a list should have a unique "key" prop. */}
-        {filteredRestaurant.length === 0 ? (
+        {filteredRestaurant?.length === 0 ? (
           <h1>No search result !!</h1>
         ) : (
-          filteredRestaurant.map((restaurant) => (
+          filteredRestaurant?.map((restaurant) => (
             <Link
               to={"/restaurants/" + restaurant.info.id}
               key={restaurant.info.id}

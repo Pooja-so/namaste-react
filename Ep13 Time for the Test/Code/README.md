@@ -26,6 +26,8 @@
 
 #### As a developer, we are only going to focus on Unit and Integration Testing..
 
+------------------------------------------------------------------------------------------------------------------------
+# Disclamer: No interviewer is going to ask all these setup, as it will laready be installed. This is just for the sake of knowing purpose
 ------------------------------------SETUP and INSTALLATION-----------------------------------------------------------
 
 ## Basic Knowledge for library Setup for Testing the app:
@@ -146,9 +148,32 @@ b. Test Environment: jsdom(browser-like)
 npm install --save-dev jest-environment-jsdom
 ```
 
+7. Enable React Testing library to Test .jsx Components
+- Reason for adding: Support for the experimental syntax 'jsx' isn't currently enabled
+- Add @babel/preset-react (https://github.com/babel/babel/tree/main/packages/babel-preset-react) to the 'presets' section of your Babel config to enable transformation.
+
+```bash
+npm install -D @babel/preset-react
+```
+- This library will help React Testing Library to convert(transform) the JSX components into HTML so that the browser can understands it while testing.
+- Include @babel/preset-react inside babel.config.js 
+
+```bash
+module.exports = {
+  presets: [
+    ["@babel/preset-env", { targets: { node: "current" } }],
+    ["@babel/preset-react", { runtime: "automatic" }],
+  ],
+}
+```
+8. Install dependency for jest library
+```bash
+npm i -D @testing-library/jest-dom
+```
+
 ### Give Installation and Setup for vite-react app in proper steps-wise structured manner.
 
---------------------------------------WRITTING TEST CASES------------------------------------------------------
+-----------------------------------WRITTING TEST CASES------------------------------------------------------
 
 1. create folder "**tests**" under /components (where you have kept all your components)
 
@@ -157,3 +182,35 @@ npm install --save-dev jest-environment-jsdom
   .test.js or .test.ts or .spec.js or .spec.ts
 - Here "\_\_" (2 underscores) means dunder test (Why we use? Assumption, so that nobody accidently creates the folder
   with the same name)
+
+2. Syntax for writing test case:
+   Inside sum.test.js
+   Syntax: test(description, callbackfun)
+   where description: Description of what we are testing
+   callbackFun: Code used for performing testing
+
+```bash
+test("Sum function should calculate the sum of the 2 numbers", () => {
+  const result = sum(3,4);
+  expect(result).toBe(7); // this line is called assertion
+})
+```
+
+Now run the test cases:
+
+```bash
+npm run test
+```
+
+## Remember (Point on Testing):
+
+1. Whenever you are testing a React component, first of you'll need to render/load that component onto the jsDom first. (jsDom is a library that provides browser-like environment for testing.)
+
+- Code example, refer contact.test.js were we are testing whether ContactUs Component get loaded onto the page or not.
+
+## Core Methods with it properties and functions of React Testing Library that need to be studided
+
+> What it do and how it is use
+
+1. render
+2. screen
