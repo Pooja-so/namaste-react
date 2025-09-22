@@ -1,0 +1,78 @@
+{
+  "info": {
+    "id": "116850",
+    "name": "Amdavadi Naylon Khaman- Bhatar",
+    "cloudinaryImageId": "nhmqc6nqtxe0nfrpdkyb",
+    "locality": "Rupali Naher",
+    "areaName": "BHATAR",
+    "costForTwo": "₹270 for two",
+    "cuisines": ["Gujarati", "Snacks"],
+    "avgRating": 4.7,
+    "veg": true,
+    "parentId": "31433",
+    "avgRatingString": "4.7",
+    "totalRatingsString": "1.9K+",
+    "sla": {
+      "deliveryTime": 24,
+      "lastMileTravel": 2.5,
+      "serviceability": "SERVICEABLE",
+      "slaString": "20-25 mins",
+      "lastMileTravelString": "2.5 km",
+      "iconType": "ICON_TYPE_EMPTY"
+    },
+    "availability": {
+      "nextCloseTime": "2025-09-22 19:30:00",
+      "opened": true
+    },
+    "badges": {
+      "imageBadges": [
+        {
+          "imageId": "v1695133679/badges/Pure_Veg111.png",
+          "description": "pureveg"
+        }
+      ]
+    },
+    "isOpen": true,
+    "aggregatedDiscountInfoV2": {},
+    "type": "F",
+    "badgesV2": {
+      "entityBadges": {
+        "imageBased": {
+          "badgeObject": [
+            {
+              "attributes": {
+                "description": "pureveg",
+                "imageId": "v1695133679/badges/Pure_Veg111.png"
+              }
+            }
+          ]
+        },
+        "textBased": {},
+        "textExtendedBadges": {}
+      }
+    },
+    "differentiatedUi": {
+      "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+      "differentiatedUiMediaDetails": {
+        "lottie": {},
+        "video": {}
+      }
+    },
+    "reviewsSummary": {},
+    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    "restaurantOfferPresentationInfo": {},
+    "externalRatings": {
+      "aggregatedRating": {
+        "rating": "--"
+      }
+    },
+    "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+  },
+  "analytics": {
+    "context": "seo-data-bfe7438c-8d89-441e-821b-38f574daf3b0"
+  },
+  "cta": {
+    "link": "https://www.swiggy.com/city/surat/amdavadi-naylon-khaman-bhatar-rupali-naher-bhatar-rest116850",
+    "type": "WEBLINK"
+  }
+}

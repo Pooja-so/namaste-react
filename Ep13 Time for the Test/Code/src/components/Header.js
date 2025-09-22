@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import useOnlineStatus from "../utlis/useOnlineStatus";
 import { Link } from "react-router-dom";
 import UserContext from "../utlis/UserContext";
-import logo from "../../img/food.png";
+// import logo from "../../img/food.png";
 
 const Header = () => {
   let btnName = "Login"; //Normal JS variable
@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <div className="flex justify-between bg-yellow-200 shadow-md">
       <div className="w-20 ">
-        <img src={logo} className="w-15" />
+        {/* <img src={logo} className="w-15" /> */}
       </div>
       <div className="flex">
         <ul className="flex gap-6 items-center font-semibold">

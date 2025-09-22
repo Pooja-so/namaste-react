@@ -1,4 +1,4 @@
-import { IMG_CDN_URL } from "../utlis/constants";
+// import { IMG_CDN_URL } from "../utlis/constants";
 // Restaurant Card component: Image, name, cuisine
 const RestaurantCard = (props) => {
   //   console.log(props); //props is an javascript object
@@ -11,6 +11,8 @@ const RestaurantCard = (props) => {
     costForTwoString,
     sla,
   } = resData?.info;
+
+  // console.log("JSON Data:", resData?.info)
   return (
     <div className="flex flex-col justify-center items-center w-80  p-5 bg-slate-200 h-auto rounded-lg hover:bg-slate-300">
       <div className="h-3/6">
