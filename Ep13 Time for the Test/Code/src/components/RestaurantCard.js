@@ -14,11 +14,14 @@ const RestaurantCard = (props) => {
 
   // console.log("JSON Data:", resData?.info)
   return (
-    <div className="flex flex-col justify-center items-center w-80  p-5 bg-slate-200 h-auto rounded-lg hover:bg-slate-300">
+    <div
+      data-testid="res-card"
+      className="flex flex-col justify-center items-center w-80  p-5 bg-slate-200 h-auto rounded-lg hover:bg-slate-300"
+    >
       <div className="h-3/6">
         <img
           className="w-30 rounded-lg"
-          src={IMG_CDN_URL + cloudinaryImageId}
+          src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${cloudinaryImageId}`}
         ></img>
       </div>
       <div className="flex flex-col gap-1 p-3 h-3/6">

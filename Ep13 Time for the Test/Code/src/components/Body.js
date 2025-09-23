@@ -13,7 +13,7 @@ const Body = () => {
   const { loggedInUser, setUsername } = useContext(UserContext);
 
   const restaurantList = useRestaurantList();
-  console.log(" RestaurantList: ", restaurantList);
+  // console.log(" RestaurantList: ", restaurantList);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
   const onlineStatus = useOnlineStatus();
@@ -37,7 +37,7 @@ const Body = () => {
     const searchResult = restaurantList.filter((restaurant) =>
       restaurant.info.name.toLowerCase().includes(searchText.toLowerCase())
     );
-    console.log("Searched Restaurant Result: ", searchResult);
+    // console.log("Searched Restaurant Result: ", searchResult);
     setFilteredRestaurant(searchResult);
   }
 
@@ -45,7 +45,7 @@ const Body = () => {
     return <h1>Oops!! No internet connection.....</h1>;
   }
 
-  console.log("Body component is rendered");
+  // console.log("Body component is rendered");
 
   // conditional rendering
   return restaurantList?.length === 0 ? (
@@ -64,17 +64,18 @@ const Body = () => {
 
         <div className="flex justify-between items-center">
           <input
+            data-testid="search-input"
             className=" p-2 px-10  border-2 border-slate-400 border-r-0  rounded-l-lg shadow-lg"
             type="text"
             value={searchText}
             placeholder="search by restaurant name"
             onChange={(event) => setSearchText(event.target.value)}
-          ></input>
+          />
           <button
             className="bg-green-500 p-2 rounded-r-lg border-gray-400 border-2 shadow-lg  "
             onClick={searchRestaurant}
           >
-            search
+            Search
           </button>
         </div>
 

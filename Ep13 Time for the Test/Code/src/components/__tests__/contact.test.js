@@ -3,9 +3,28 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 /* Objective: Testing whether ContactUs Page got loaded or not
-How to test: Simple, whenever a component is loaded you'll see the content of the component on the browser screeen. Use it */
+-> How to test: Simple, whenever a component is loaded you'll see the content of the component on the browser screeen. Use it
+-> We can use describe() fro grouping the related test cases together
+-> Within describe(), If we want to run something before all test-cases then, jest provide us with a function beforeAll(callbackfun), here the callback Function will run before all the test-cases inside the describe
+*/
 
 describe("Contact Us Page Test Cases ", () => {
+  beforeAll(() => {
+    console.log("Before running all the test cases");
+  });
+
+  beforeEach(() => {
+    console.log("Before running each test case.");
+  });
+  afterAll(() => {
+    console.log("After complete running all the test cases");
+    // clean up operation
+  });
+
+  afterEach(() => {
+    console.log("After running each test case.");
+  });
+
   test("Should Does Contact us Page get loaded or not?", () => {
     // Step 1: Render the component onto the jsDom for testing
     render(<ContactUs />);

@@ -1,0 +1,8 @@
+1. Automate running test cases:
+"scripts": {
+    ....
+    ....
+    "test-watch": "jest --watch
+  },
+
+  command: npm run script-name >> npm run test-watch
